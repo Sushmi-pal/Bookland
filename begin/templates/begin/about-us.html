@@ -1,0 +1,44 @@
+{% extends 'begin/base.html' %}
+
+{% load static %}
+{% block body %}
+<!--<section id="about-us">-->
+    <!--<div class="container">-->
+      <!--&lt;!&ndash;<h1 class="title text-center">WHY VISIT US?</h1>&ndash;&gt;-->
+      <!--<div class="row">-->
+        <!--<div class="col-md-6 about-us">-->
+          <!--<p class="about-title">Why we're different?</p>-->
+          <!--<ul>-->
+            <!--<li>An easy and friendly web interface</li>-->
+            <!--<li>Besides my minor and major project, this is is the first project I have developed.-->
+              <!--I am final year computer engineering student and dream to be a successful web developer.</li>-->
+            <!--<li>We protect your data</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+
+      <!--</div>-->
+        <!--<img class="aboutusimg" src="{% static 'images/aboutus.jpg' %}">-->
+    <!--</div>-->
+
+  <!--</section>-->
+ <section id="about-us">
+    <div class="container">
+      <!--<h1 class="title text-center">WHY VISIT US?</h1>-->
+      <div class="row">
+        <div class="col-md-6 about-us">
+          <!--<p class="about-title">Why we're different?</p>-->
+            <img src = "{% static 'images/aboutus.jpg' %}" class="about-us-img"/>
+          <ul>
+            <li>An easy and friendly web interface</li>
+           <li>Besides my minor and major project, this is is the first project I have developed.
+              I am final year computer engineering student and dream to be a successful web developer.</li>
+           <li>We protect your data</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

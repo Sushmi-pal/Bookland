@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+*{
+	padding: 0;
+	margin:0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+div section img{
+	background-image: "images/books.jpg";
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+
+
+.one{
+font-size:30px;
+text-decoration:none;
+margin:10px;
+float:right;
+top:5px;
+padding:20px 10px;
+}
+a:hover{
+border:1px solid white;
+}
+.title text-center{
+text-align:center;
+}
+
+nav {
+
+	float: right;
+	width: 100vw;
+	height: 50px;
+	padding: 10px 30px;
+	margin:25px;
+	position: absolute;
+	top: 0%;
+
+}
+
+nav a{
+	text-decoration: none;
+	margin: 30px;
+	font-size: 30px;
+	color: #800000;
+}
+nav a:hover{
+	border: 1px solid white;
+}
+h1{
+	top:0;
+	position: absolute;
+	font-size: 70px;
+	text-align: center;
+	text-shadow: brown;
+	left: 15%;
+	top: 20%;
+	color: #800000;
+}
+/*body{
+	background-image: "images/books.jpg";
+	height: 100%;
+	width: 100%;
+
+}
+section img{
+	width:250px;
+	height: 150px;
+	left: 100px;
+	padding: 20px;
+}
+*/
+div section img{
+	background-image: "images/books.jpg";
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+.new{
+	height: 15vh;
+	background-color:blue;
+	}
+	.one{
+	font-size:30px;
+	text-decoration:none;
+	margin:10px;
+	float:right;
+	top:5px;
+	padding:20px 10px;
+	}
+	a:hover{
+	border:1px solid white;
+	}
+	.title text-center{
+	text-align:center;
+	}
+
+.new{
+height: 15vh;
+width:100vw;
+background-color:blue;
+}
+.one{
+font-size:30px;
+text-decoration:none;
+margin:10px;
+float:right;
+top:5px;
+padding:20px 10px;
+}
+a:hover{
+border:1px solid white;
+}
+.title text-center{
+text-align:center;
+}
+.aboutusimg{
+height:50%;
+top:150px;
+position:absolute;
+float:right;
+left:450px;
+
+float:right;}
+p ul li{
+float:left;
+top:500px;
+left:200px;}
+#about-us
+{
+
+    padding-bottom: 50px;
+    padding-top: 45px;
+    margin:80px 0 0 0
+}
+.about-title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 8%;
+}
+#about-us ul li{
+    margin: 20px 0 0 0;
+}
+#about-us ul{
+    margin-left: 20px;
+
+}
+.about-us-img{
+float:right;
+height:180px;}
+
+
+.title{
+color:black;
+margin-left:20%;
+}
+.col-md-6 services{
+margin-top:40%;
+}
+.row text-center{
+margin-top:40%;
+}
+nav ul li{
+display:block;
+}
+.basenav{
+background-color:blue;
+color:white;
+margin:0 0 0 0;
+height:75px;
+}
+
+#services
+{
+    background-image: url('/static/images/servicebg.jpg');
+    padding: 80px 0;
+    height:50vh;
+    width:100vw;
+    background-size:cover;
+    filter:blur(20%);
+
+
+}
+.container{
+margin-left:20%;}
+
+.formreg{
+border:1px solid black;
+margin:20px 10px 10px 40px;
+padding:10px 20px;
+height:100vh;
+width:50vw;
+
+}

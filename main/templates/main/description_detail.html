@@ -1,0 +1,22 @@
+{% extends 'begin/base.html' %}
+{% block body %}
+<div class="detail">
+<h1>Book's Detail</h1>
+
+    <div class="image-side">
+<img src="{{MEDIA_URL}}{{object.book_image}}" width="500px" height="500px" >
+</div>
+<h2>Seller:{{object.seller}}<br>
+Book's name:{{object.book_name}}<br>
+Edition:{{object.edition}}<br>
+Price:{{object.price}}<br>
+Location:{{object.location}}<br>
+Contact num:{{object.phone}}<br>
+</h2></div>
+
+{% if object.seller == user %}
+<a href="{% url 'main:update' object.id %}" class="btn btn-secondary">Update</a>
+<a href="{% url 'main:delete' object.id %}" class="btn btn-danger">Delete</a>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+  .container {
+    display: flex;
+    <!--justify-content: space-around;-->
+flex-direction: row;
+flex-wrap: wrap;
+  }
+   .card{
+ border:1px solid black;
+}
+.card-me{
+margin:20px;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="container">
+    {% for booksdetail in desc %}
+<div class="card-me" style="width: 200px; border:2px solid black;">
+  <img src="{{MEDIA_URL}}{{booksdetail.book_image}}" width="200px" height="150px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{booksdetail.book_name}}</h5>
+    <p class="card-text">{{booksdetail.location}}</p>
+      <p class="card-text">{{booksdetail.price}}</p>
+    <a href="/main/detail/{{booksdetail.id}}" class="btn btn-primary">More Detail</a>
+  </div>
+</div>
+{% endfor %}
+    <form method="get" action="{% url 'main:search' %}" class="form-inline ">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+
+
+</body>
+</html>

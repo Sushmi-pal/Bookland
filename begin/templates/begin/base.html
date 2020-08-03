@@ -1,0 +1,187 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'begin/style.css' %}">
+    <title>My website</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<style>
+.one{
+font-size:30px;
+text-decoration:none;
+margin:10px 5px 0 5px;
+float:right;
+top:5px;
+
+}
+.basenav{
+background-color:blue;
+color:white;
+margin:0 0 0 0;
+height:75px;
+}
+.formreg{
+border:1px solid black;
+margin:90px 10px 10px 40px;
+padding:10px 20px;
+height:100vh;
+width:50vw;
+
+
+}
+#services
+{
+    background-image: url('/static/images/servicebg.jpg');
+    padding: 80px 0;
+    height:50vh;
+    width:100vw;
+    background-size:cover;
+    filter:blur(20%);
+
+
+}
+#about-us
+{
+
+    padding-bottom: 50px;
+    padding-top: 45px;
+    margin:80px 0 0 80px;
+}
+
+#about-us ul li{
+    margin: 20px 0 0 0;
+}
+#about-us ul{
+    margin-left: 20px;
+
+}
+.about-us-img{
+float:right;
+height:180px;}
+
+#mainh1{
+position:absolute;
+top:40%;
+font-size:90px;
+color:#800000;
+text-align:center;
+
+}
+
+<!--service-->
+div p{
+margin-top:50%;
+}
+.alert{
+top:30%;
+}
+<!--profile-->
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.card{
+border:2px solid black;
+}
+
+
+<!--main app-->
+.container {
+    display: flex;
+    <!--justify-content: space-around;-->
+flex-direction: row;
+flex-wrap: wrap;
+  }
+   .card{
+ border:1px solid black;
+}
+.card-me{
+
+margin:90px 20px 20px 20px;
+float:left;
+}
+.detail{
+margin-top:250px;
+width:70%;
+}
+
+.image-side{
+float:right;
+<!--margin-bottom:60px;-->
+}
+.form-inline{
+margin-top:150px;
+
+}
+.sell-form{
+margin:200px 0 0 20px;
+border:2px solid black;
+width:600px;
+height:600px;
+padding:100px 10px 10px 100px;
+}
+
+</style>
+
+</head>
+<body>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if user.is_authenticated %}
+<nav class="basenav">
+
+<ul>
+	<li>
+		<a class="one" href="{% url 'accounts:profile' %}">Profile</a>
+		<a class="one" href="{% url 'main:buy' %}">Buy</a>
+		<a class="one" href="{% url 'main:sell' %}">Sell</a>
+		<a class="one" href="{% url 'accounts:signup' %}">Register</a>
+			<a class="one" href="{% url 'accounts:login' %}">Login</a>
+			<a class="one" href="{% url 'begin:contact' %}"> Contact Us</a>
+			<a class="one" href="{% url 'begin:service' %}">Our Services</a>
+			<a class="one" href="{% url 'begin:about-us' %}">About Us</a>
+			<a class="active one" href="{% url 'begin:index' %}">Home</a>
+
+</li>
+</ul>
+
+</nav>
+{% else %}
+<nav class="basenav">
+
+<ul>
+	<li>
+		<a class="one" href="{% url 'accounts:signup' %}">Register</a>
+			<a class="one" href="{% url 'accounts:login' %}">Login</a>
+			<a class="one" href="{% url 'begin:contact' %}"> Contact Us</a>
+			<a class="one" href="{% url 'begin:service' %}">Our Services</a>
+			<a class="one" href="{% url 'begin:about-us' %}">About Us</a>
+			<a class="active one" href="{% url 'begin:index' %}">Home</a>
+
+</li>
+</ul>
+
+</nav>
+{% endif %}
+
+{% block body %}
+{% endblock %}
+</body>
+</html>

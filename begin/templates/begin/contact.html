@@ -1,0 +1,44 @@
+{% extends 'begin/base.html' %}
+{% load static %}
+{% block body %}
+<div class="container my-3">
+<form action="{% url 'begin:contact' %}" method="post">
+    {% csrf_token %}
+    <h1>Contact Us</h1>
+    <br><br>
+    <br>
+     <br><br>
+    <br> <br><br>
+    <br>
+    <div class="form-group">
+    <label for="name">Name</label>
+        <br>
+    <input type="name" name="name" class="form-control" id="name" aria-describedby="name" style="margin: 0px;
+    width: 637px; ">
+    </div>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+      <br>
+    <input type="email" name="email" class="form-control" id="email" aria-describedby="email" style="margin: 0px;
+    width: 637px; ">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone number</label>
+      <br>
+    <input type="phone" name="phone" class="form-control" id="phone"  style="margin: 0px;
+    width: 637px; ">
+  </div>
+
+    <div class="form-group">
+    <label for="content">Describe your issues:</label>
+        <br>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="3" style="margin: 0px;
+    width: 637px; height: 237px;"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+{% endblock %}

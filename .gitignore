@@ -308,3 +308,5 @@ fabric.properties
 # pytype static type analyzer
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,django,python
+
+ob/settings/env.py

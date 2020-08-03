@@ -1,4 +1,4 @@
-from .base import *
+from ob.ob.settings import *
 SECRET_KEY = ''
 DEBUG = True
 ALLOWED_HOSTS = []

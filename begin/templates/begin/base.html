@@ -34,6 +34,7 @@ width:50vw;
 
 
 }
+
 #services
 {
     background-image: url('/static/images/servicebg.jpg');
@@ -149,15 +150,15 @@ padding:100px 10px 10px 100px;
 
 <ul>
 	<li>
-		<a class="one" href="{% url 'accounts:profile' %}">Profile</a>
-		<a class="one" href="{% url 'main:buy' %}">Buy</a>
-		<a class="one" href="{% url 'main:sell' %}">Sell</a>
-		<a class="one" href="{% url 'accounts:signup' %}">Register</a>
+
+			<a class="active one" href="{% url 'begin:index' %}">Home</a>
+			<a class="active one" href="{% url 'main:buy' %}">Buy</a>
+			<a class="active one" href="{% url 'main:sell' %}">Sell</a>
 			<a class="one" href="{% url 'accounts:login' %}">Login</a>
 			<a class="one" href="{% url 'begin:contact' %}"> Contact Us</a>
-			<a class="one" href="{% url 'begin:service' %}">Our Services</a>
-			<a class="one" href="{% url 'begin:about-us' %}">About Us</a>
-			<a class="active one" href="{% url 'begin:index' %}">Home</a>
+			<a class="one" href="{% url 'accounts:logout' %}">Logout</a>
+			<a class="one" href="{% url 'accounts:profile' %}">Profile</a>
+
 
 </li>
 </ul>

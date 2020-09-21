@@ -197,3 +197,10 @@ height:100vh;
 width:50vw;
 
 }
+
+#link{
+	text-decoration: None;
+	color: black;
+	border:2px outset rgb(118, 118, 118);
+	background: rgb(239, 239, 239)
+}

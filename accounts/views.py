@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db import transaction
 
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
@@ -11,6 +12,9 @@ from django.dispatch import receiver
 from .models import Profile
 # Create your views here.
 def LoginView(request):
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return redirect('/accounts/profile')
     if request.method=='POST':
         form=LoginForm(request.POST)
         if form.is_valid():
@@ -29,14 +33,38 @@ def LoginView(request):
         form=LoginForm()
     return render(request,'accounts/login.html',{'form':form})
 
-@login_required()
+@login_required
+@transaction.atomic
 def ProfileView(request):
-   return render(request,'accounts/profile.html')
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(
+                request,
+                f'Your profile has been updated successfully'
+            )
+            return redirect('accounts:profile')
+
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+    return render(request, 'accounts/profile.html', context)
 
 
 
 
 def SignupView(request):
+    if request.method=='GET':
+        if request.user.is_authenticated:
+            return redirect('/accounts/profile')
     if request.method=='POST':
         form=SignupForm(request.POST)
         if form.is_valid():

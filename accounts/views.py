@@ -1,4 +1,6 @@
 from django.shortcuts import render,redirect
+from django.template.loader import get_template
+
 from .forms import LoginForm,SignupForm,UserUpdateForm,ProfileUpdateForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
@@ -32,10 +34,19 @@ def LoginView(request):
             return redirect('/accounts/profile/')
         form=LoginForm()
     return render(request,'accounts/login.html',{'form':form})
+from django.core.mail import send_mail,EmailMultiAlternatives
 
-@login_required
 @transaction.atomic
 def ProfileView(request):
+    html_file=get_template('accounts/mailtemplate.html')
+    html_content=html_file.render()
+    sub='Test'
+    from_email='sushpalikhe85@gmail.com'
+    to=['sushmipalikhe97@gmail.com', ]
+    msg=EmailMultiAlternatives(subject=sub, from_email=from_email, to=to )
+    msg.attach_alternative(html_content,'text/html')
+    msg.send()
+
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -87,4 +98,6 @@ def SignupView(request):
 def LogoutView(request):
     logout(request)
     return redirect('/accounts/login/')
+
+
 

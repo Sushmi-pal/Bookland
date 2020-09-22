@@ -2,6 +2,7 @@
 {% load static %}
 {% block body %}
 {% load crispy_forms_tags %}
+{% load cache%}
 <!--<section id="nav-bar">-->
 <!--            <nav class="navbar navbar-expand-lg navbar-light">-->
 <!--                <a class="navbar-brand" href="{% url 'begin:home' %}"><img src = "{% static 'images/logooo.png' %}" alt="image" /></a>-->
@@ -97,6 +98,7 @@
                       margin: 30px 0px 0px 28px;
                }
            </style>
+{% cache 60 body request.user %}
            <div class="container">
                <h1 class="title text-center">Personal Information</h1>
                         <div class="row">
@@ -124,7 +126,7 @@
                         </div>
                <a id="link" href="/accounts/logout">Logout</a>
            </div>
-
+{% endcache %}
 {% endblock %}
 
 

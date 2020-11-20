@@ -310,3 +310,5 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,django,python
 
 ob/settings/env.py
+cache_file/*
+cache_file/db74d4b26c5b6b0f6a8e72a40dd24252.djcache

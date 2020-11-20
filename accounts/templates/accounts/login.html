@@ -11,8 +11,11 @@
     {% csrf_token %}
     {{form|crispy}} <br><br>
 
-    <button type="submit">Login</button>
-    <a id='link' href="/accounts/signup">Signup</a>
+    <button class="ubutton" type="submit">Login</button>
+    <br>
+    <br>
+    Not registered?
+    <a class="ubutton" href="/accounts/signup">Signup</a>
 
 </form>
     </div>

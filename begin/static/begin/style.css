@@ -46,7 +46,7 @@ nav a{
 	text-decoration: none;
 	margin: 30px;
 	font-size: 30px;
-	color: #800000;
+	color: black;
 }
 nav a:hover{
 	border: 1px solid white;
@@ -59,7 +59,7 @@ h1{
 	text-shadow: brown;
 	left: 15%;
 	top: 20%;
-	color: #800000;
+	color:black;
 }
 /*body{
 	background-image: "images/books.jpg";

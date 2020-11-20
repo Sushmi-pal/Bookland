@@ -17,6 +17,7 @@ text-decoration:none;
 margin:10px 5px 0 5px;
 float:right;
 top:5px;
+color: black;
 
 }
 .basenav{
@@ -39,12 +40,17 @@ width:50vw;
 {
     background-image: url('/static/images/servicebg.jpg');
     padding: 80px 0;
-    height:50vh;
-    width:100vw;
+    height:100%;
+    width:100%;
     background-size:cover;
     filter:blur(20%);
 
 
+}
+.servicediv{
+	margin-top: 10%;
+	color: black;
+	font-size: 30px;
 }
 #about-us
 {
@@ -67,11 +73,20 @@ height:180px;}
 
 #mainh1{
 position:absolute;
-top:40%;
-font-size:90px;
-color:#800000;
+top:20%;
+font-size:180px;
+font-weight: bold;
+color: black;
 text-align:center;
 
+}
+#pmain{
+position:absolute;
+top:50%;
+font-size:90px;
+font-weight: normal;
+color: black;
+left:25%;
 }
 
 <!--service-->
@@ -96,6 +111,13 @@ border:2px solid black;
 
 <!--main app-->
 .container {
+    display: flex;
+    <!--justify-content: space-around;-->
+flex-direction: row;
+flex-wrap: wrap;
+  }
+
+	.containerone {
     display: flex;
     <!--justify-content: space-around;-->
 flex-direction: row;
@@ -130,6 +152,45 @@ height:600px;
 padding:100px 10px 10px 100px;
 }
 
+ label{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                input{
+                    margin-bottom: 0.5rem;
+                    padding: 0px 6px;
+                    width: 30%;
+                    height: 32px;
+                }
+
+               .ubutton{
+                  background: linear-gradient(to right,#2895f1,#0060b1);
+                  color: white;
+                  font-weight: 600;
+                  border-radius: 0.6em;
+                  border: none;
+                  padding: 10px 40px;
+                  font-size: 20px;
+                  margin-bottom: 20px;
+                  margin-left: 8px;
+                  text-decoration: none;
+                  outline: none !important;
+               }
+               #updatebutton:hover{
+                      font-size: 21px;
+               }
+               .media{
+               align-items: center;
+                   padding-top: 180px;
+               }
+               .account-img{
+                      outline: #0060b1;
+               }
+               .media-body{
+                      display: inline-block;
+                      margin: 30px 0px 0px 28px;
+               }
+
 </style>
 
 </head>
@@ -151,13 +212,14 @@ padding:100px 10px 10px 100px;
 <ul>
 	<li>
 
-			<a class="active one" href="{% url 'begin:index' %}">Home</a>
-			<a class="active one" href="{% url 'main:buy' %}">Buy</a>
-			<a class="active one" href="{% url 'main:sell' %}">Sell</a>
-			<a class="one" href="{% url 'accounts:login' %}">Login</a>
-			<a class="one" href="{% url 'begin:contact' %}"> Contact Us</a>
+
 			<a class="one" href="{% url 'accounts:logout' %}">Logout</a>
+			<a class="one" href="{% url 'begin:contact' %}"> Contact Us</a>
+
 			<a class="one" href="{% url 'accounts:profile' %}">Profile</a>
+		<a class="one" href="{% url 'main:buy' %}">Buy</a>
+			<a class="one" href="{% url 'main:sell' %}">Sell</a>
+			<a class="active one" href="{% url 'begin:index' %}">Home</a>
 
 
 </li>

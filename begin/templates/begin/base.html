@@ -11,29 +11,57 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 .one{
 font-size:30px;
 text-decoration:none;
 margin:10px 5px 0 5px;
 float:right;
 top:5px;
-color: black;
+color: white;
 
 }
+.one:hover{
+
+	border: none;
+	color: black;
+	text-decoration: underline;
+}
+
 .basenav{
-background-color:blue;
+background-color:#12273c;
 color:white;
+font-weight: bold;
 margin:0 0 0 0;
 height:75px;
 }
 .formreg{
-border:1px solid black;
+
 margin:90px 10px 10px 40px;
-padding:10px 20px;
-height:100vh;
+padding:10px 150px;
+height:130vh;
 width:50vw;
+left: 100px;
+
+background-color:white;
 
 
+
+}
+.formlog{
+	border:1px solid black;
+margin:90px 10px 10px 40px;
+padding:10px 150px;
+height:90vh;
+width:50vw;
+left: 100px;
+
+background-color:white;
+
+
+}
+.indeximg{
+	background-color: red;
 }
 
 #services
@@ -67,17 +95,22 @@ width:50vw;
     margin-left: 20px;
 
 }
+.form-control{
+	width: 100%;
+	color: black;
+}
 .about-us-img{
 float:right;
 height:180px;}
 
 #mainh1{
 position:absolute;
-top:20%;
-font-size:180px;
-font-weight: bold;
+top:50%;
+font-size:60px;
+font-weight: normal;
 color: black;
 text-align:center;
+font-family: 'Aclonica', sans-serif;;
 
 }
 #pmain{
@@ -164,7 +197,7 @@ padding:100px 10px 10px 100px;
                 }
 
                .ubutton{
-                  background: linear-gradient(to right,#2895f1,#0060b1);
+                  background: #12273c;
                   color: white;
                   font-weight: 600;
                   border-radius: 0.6em;
@@ -176,8 +209,14 @@ padding:100px 10px 10px 100px;
                   text-decoration: none;
                   outline: none !important;
                }
+			   .ubutton:hover{
+				   font-size: 40px;
+				   color: black;
+				   border: 1px solid white;
+			   }
                #updatebutton:hover{
                       font-size: 21px;
+
                }
                .media{
                align-items: center;
@@ -190,9 +229,15 @@ padding:100px 10px 10px 100px;
                       display: inline-block;
                       margin: 30px 0px 0px 28px;
                }
+.active-item{
+	color: black;
 
+}
+.normal-item{
+	color: white;
+}
 </style>
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 {% if messages %}
@@ -208,7 +253,7 @@ padding:100px 10px 10px 100px;
 
 {% if user.is_authenticated %}
 <nav class="basenav">
-
+<h1>Bookland</h1>
 <ul>
 	<li>
 
@@ -233,10 +278,10 @@ padding:100px 10px 10px 100px;
 	<li>
 		<a class="one" href="{% url 'accounts:signup' %}">Register</a>
 			<a class="one" href="{% url 'accounts:login' %}">Login</a>
-			<a class="one" href="{% url 'begin:contact' %}"> Contact Us</a>
+			<a class="one" href= "{% url 'begin:contact' %}"> Contact Us</a>
 			<a class="one" href="{% url 'begin:service' %}">Our Services</a>
 			<a class="one" href="{% url 'begin:about-us' %}">About Us</a>
-			<a class="active one" href="{% url 'begin:index' %}">Home</a>
+			<a class="active one" href=" {% url 'begin:index' %}">Home</a>
 
 </li>
 </ul>
@@ -245,6 +290,7 @@ padding:100px 10px 10px 100px;
 {% endif %}
 
 {% block body %}
+JJJJJJJJJJJJJJJJJJJ
 {% endblock %}
 </body>
 </html>

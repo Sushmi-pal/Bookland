@@ -23,9 +23,7 @@ float:right;
 top:5px;
 padding:20px 10px;
 }
-a:hover{
-border:1px solid white;
-}
+
 .title text-center{
 text-align:center;
 }
@@ -48,9 +46,7 @@ nav a{
 	font-size: 30px;
 	color: black;
 }
-nav a:hover{
-	border: 1px solid white;
-}
+
 h1{
 	top:0;
 	position: absolute;
@@ -93,9 +89,7 @@ div section img{
 	top:5px;
 	padding:20px 10px;
 	}
-	a:hover{
-	border:1px solid white;
-	}
+
 	.title text-center{
 	text-align:center;
 	}
@@ -113,9 +107,7 @@ float:right;
 top:5px;
 padding:20px 10px;
 }
-a:hover{
-border:1px solid white;
-}
+
 .title text-center{
 text-align:center;
 }
@@ -188,16 +180,15 @@ height:75px;
 }
 .container{
 margin-left:20%;}
-
 .formreg{
-border:1px solid black;
-margin:20px 10px 10px 40px;
-padding:10px 20px;
-height:100vh;
+
+margin:90px 10px 10px 40px;
+padding:10px 150px;
+height:130vh;
 width:50vw;
-
+left: 100px;
+background-color:white;
 }
-
 #link{
 	text-decoration: None;
 	color: black;
